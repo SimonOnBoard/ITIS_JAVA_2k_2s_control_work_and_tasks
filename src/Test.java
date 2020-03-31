@@ -83,35 +83,56 @@ public class Test {
         //LIFO - Last In First Out -stack
 
 
-        Map<String, Long> result = new HashMap<>();
-        System.out.println(result.put("Иван",43L));
-        System.out.println(result.put("Алексей",35L));
-        result.put("Андрей",32L);
-        result.put("Ahrakadabra",11L);
-        result.put("Ныпфыпа",15L);
-        Set<String> keys = result.keySet();
-        Set<Map.Entry<String,Long>> entries = result.entrySet();
+//        Map<String, Long> result = new HashMap<>();
+//        System.out.println(result.put("Иван",43L));
+//        System.out.println(result.put("Алексей",35L));
+//        result.put("Андрей",32L);
+//        result.put("Ahrakadabra",11L);
+//        result.put("Ныпфыпа",15L);
+//        Set<String> keys = result.keySet();
+//        Set<Map.Entry<String,Long>> entries = result.entrySet();
+//
+//        System.out.println(keys.toString());
+//        result.put("Андрей",253425L);
+//        for(String s: keys){
+//            System.out.println("Key: " + s + " Value:" + result.get(s));
+//        }
+//        System.out.println("---------------------------------------");
+//        for (Map.Entry<String,Long> entry: entries){
+//            System.out.println(entry.getKey() +  " " + entry.getValue());
+//        }
 
-        System.out.println(keys.toString());
-        result.put("Андрей",253425L);
-        for(String s: keys){
-            System.out.println("Key: " + s + " Value:" + result.get(s));
+
+//        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
+//            @Override
+//            public int compare(Integer o1, Integer o2) {
+//                return o2.compareTo(o1);
+//                //0 - если равны
+//                //>0 - если 1 объект больше второго
+//                //<0 - если 1 объект меньше второго
+//            }
+//        });
+//
+//        priorityQueue.add(24534);
+//        priorityQueue.add(999999999);
+//        priorityQueue.add(324214231);
+//        while (priorityQueue.peek() != null){
+//            System.out.println(priorityQueue.poll());
+//        }
+
+        Comparator<Integer> comparator =
+                (o1,o2) -> {
+            System.out.println( o1 + " " + o2);
+            return o1.compareTo(o2);
+        };
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(comparator);
+
+        priorityQueue.add(24534);
+        priorityQueue.add(999999999);
+        priorityQueue.add(324214231);
+        System.out.println("___________________");
+        while (priorityQueue.peek() != null){
+            System.out.println(priorityQueue.poll());
         }
-        System.out.println("---------------------------------------");
-        for (Map.Entry<String,Long> entry: entries){
-            System.out.println(entry.getKey() +  " " + entry.getValue());
-        }
-
-
-////        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>((o1, o2) -> {
-////            return o2 - o1;
-////        });
-////
-////        priorityQueue.add(1);
-////        priorityQueue.add(2);
-////        priorityQueue.add(3);
-////        while (priorityQueue.peek() != null){
-////            System.out.println(priorityQueue.poll());
-////        }
     }
 }
