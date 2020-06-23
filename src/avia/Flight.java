@@ -1,13 +1,17 @@
 package avia;
 
+
+@Author(name = "Ivan")
 public class Flight {
     private int airLine;
     private int flightNumber;
     private String source;
     private String destination;
-
     public int getAirLine() {
         return airLine;
+    }
+
+    public Flight() {
     }
 
     public void setAirLine(int airLine) {
@@ -53,5 +57,9 @@ public class Flight {
                 ", source='" + source + '\'' +
                 ", destination='" + destination + '\'' +
                 '}';
+    }
+
+    private void getInfo(String s1){
+        System.out.println(s1);
     }
 }

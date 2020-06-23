@@ -20,6 +20,7 @@ public class FlightsMain {
             flightList.add(flight);
             System.out.println(flight.toString());
         }
+
         Set<Integer> integerSet = new HashSet<>();
         flightList.stream().forEach(x -> integerSet.add(x.getAirLine()));
         List<Integer> companies = flightList.stream().mapToInt(x -> x.getAirLine()).distinct().boxed().collect(Collectors.toList());
